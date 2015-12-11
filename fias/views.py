@@ -121,13 +121,13 @@ class SuggestAddressViewStepByStep(Select2View):
                 return (
                     NO_ERR_RESP,
                     False,
-                    ((force_text(l.pk), '{0}, {1}'.format(prefix, l), {'level': l.aolevel}) for l in result)
+                    ((force_text(l.pk), '{0}, {1}'.format(prefix, l), {'level': l.aolevel, 'code': l.code}) for l in result)
                 )
             else:
                 return (
                     NO_ERR_RESP,
                     False,
-                    ((force_text(l.pk), l.full_name(5, True), {'level': l.aolevel}) for l in result)
+                    ((force_text(l.pk), l.full_name(5, True), {'level': l.aolevel, 'code': l.code}) for l in result)
                 )
 
         return EMPTY_RESULT
